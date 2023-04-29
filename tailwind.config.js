@@ -15,6 +15,11 @@ module.exports = {
             },
             colors: {
                 accentColor: "rgb(var(--accentColor))",
+                darkestColor: "rgb(var(--darkestColor))",
+                darkColor: "rgb(var(--darkColor))",
+                midColor: "rgb(var(--midColor))",
+                lightColor: "rgb(var(--lightColor))",
+                lightestColor: "rgb(var(--lightestColor))",
                 grayTransparent: "rgba(255,255,255,0.12)",
             },
             fontFamily: {

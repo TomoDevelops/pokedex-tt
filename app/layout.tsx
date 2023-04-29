@@ -6,6 +6,7 @@ import { BsSearch, BsPlus } from "react-icons/bs";
 
 import Button from "@/app/components/Button";
 import SidebarNavs from "@/app/components/SidebarNavs";
+import SuggestedAccContainer from "./components/SuggestedAccContainer";
 
 export const metadata = {
     title: "Create Next App",
@@ -87,7 +88,7 @@ export default function RootLayout({
                         <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2 text-sm">
                             <SidebarNavs />
                             <div className="relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
-                                <p className="leading-[22px] text-white text-opacity-50">
+                                <p className="leading-[22px] text-midColor">
                                     Log in to follow creators, like videos, and
                                     view comments.
                                 </p>
@@ -102,11 +103,14 @@ export default function RootLayout({
                                     </Button>
                                 </div>
                             </div>
-                            {/* <SuggestedAccContainer /> */}
-                            <h1>Hello World</h1>
+                            <SuggestedAccContainer />
                         </div>
                     </aside>
-                    <div className={`w-full`}>{children}</div>
+                    <div
+                        className={`w-full min-w-[420px] flex flex-col items-center`}
+                    >
+                        {children}
+                    </div>
                 </main>
             </body>
         </html>

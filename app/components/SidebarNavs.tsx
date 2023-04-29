@@ -16,7 +16,7 @@ export default function SidebarNavs() {
                 className={`flex items-center justify-start gap-2 p-2 font-bold ${
                     pathname === "/"
                         ? "text-accentColor"
-                        : "text-white text-opacity-90"
+                        : "text-lightestColor text-opacity-90"
                 }`}
                 href="/"
             >
@@ -25,7 +25,7 @@ export default function SidebarNavs() {
                     color={`${
                         pathname === "/"
                             ? "rgb(var(--accentColor))"
-                            : "#ffffffe6"
+                            : "rgb(var(--lightestColor))"
                     }`}
                 />
                 Pokédex
@@ -34,7 +34,7 @@ export default function SidebarNavs() {
                 className={`flex items-center justify-start gap-2 p-2 font-bold ${
                     pathname === "/following"
                         ? "text-accentColor"
-                        : "text-white text-opacity-90"
+                        : "text-lightestColor text-opacity-90"
                 }`}
                 href="/following"
             >
@@ -43,7 +43,7 @@ export default function SidebarNavs() {
                     color={`${
                         pathname === "/following"
                             ? "rgb(var(--accentColor))"
-                            : "#ffffffe6"
+                            : "rgb(var(--lightestColor))"
                     }`}
                 />
                 Following
@@ -52,7 +52,7 @@ export default function SidebarNavs() {
                 className={`flex items-center justify-start gap-2 p-2 font-bold ${
                     pathname === "/live"
                         ? "text-accentColor"
-                        : "text-white text-opacity-90"
+                        : "text-lightestColor text-opacity-90"
                 }`}
                 href="/live"
             >
@@ -61,7 +61,7 @@ export default function SidebarNavs() {
                     color={`${
                         pathname === "/live"
                             ? "rgb(var(--accentColor))"
-                            : "#ffffffe6"
+                            : "rgb(var(--lightestColor))"
                     }`}
                 />
                 LIVE
