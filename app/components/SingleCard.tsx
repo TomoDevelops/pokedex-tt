@@ -1,28 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type PokemonPropTypes = {
-    id: string;
-    name: string;
-    eng_name: string;
-    description: string;
-    image: {
-        front_default: string;
-        front_shiny?: string | null;
-    };
-    types: string[];
-    abilities: string[];
-    egg_groups: string[];
-    stats: {
-        HP: number;
-        こうげき: number;
-        ぼうぎょ: number;
-        とくこう: number;
-        とくぼう: number;
-        すばやさ: number;
-    };
-};
-
 interface TypeColorConfigTypes {
     [key: string]: string;
 }
@@ -48,7 +26,7 @@ const typeColorConfig: TypeColorConfigTypes = {
     フェアリー: "bg-[#ffbbff]",
 };
 
-const SingleCard = ({ pokemon }: { pokemon: PokemonPropTypes }) => {
+const SingleCard = ({ pokemon }: { pokemon: Pokemon }) => {
     return (
         <div
             className={`relative flex max-w-[692px] flex-col items-start gap-3 py-5 px-0 after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-y-50 after:bg-grayTransparent after:content-[""]`}
@@ -65,7 +43,7 @@ const SingleCard = ({ pokemon }: { pokemon: PokemonPropTypes }) => {
                     <ul className={`flex items-center justify-center gap-2`}>
                         {pokemon.types.map((type) => (
                             <li
-                                className={`flex h-[25px] w-[55px] min-w-[55px] max-w-[55px] items-center justify-center rounded-lg text-sm ${typeColorConfig[type]}`}
+                                className={`flex h-[25px] w-[100px] min-w-[100px] max-w-[100px] items-center justify-center rounded-lg text-sm ${typeColorConfig[type]}`}
                                 key={`${pokemon.name}+${type}`}
                             >
                                 {type}
