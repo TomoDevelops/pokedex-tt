@@ -4,6 +4,7 @@ const nextConfig = {
         appDir: true,
     },
     images: {
+        unoptimized: true,
         domains: ["raw.githubusercontent.com", "i.ytimg.com", "yt3.ggpht.com"],
     },
 };
