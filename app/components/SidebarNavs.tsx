@@ -11,7 +11,7 @@ import { HiOutlineUsers } from "react-icons/hi";
 export default function SidebarNavs() {
     const pathname = usePathname();
     return (
-        <div className="py-2">
+        <div className="flex justify-between w-full md:w-auto md:block md:py-2">
             <Link
                 className={`flex items-center justify-center lg:justify-start gap-2 p-2 font-bold ${
                     pathname === "/"

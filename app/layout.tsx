@@ -31,11 +31,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
+        // TODO: Add responsive layout for mobile and current one for tablet will be md:
         <html lang="en">
             <body
-                className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-screen flex-col justify-start bg-main font-montserrat text-base`}
+                className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-full md:min-h-screen flex-col justify-start bg-main font-montserrat text-base`}
             >
-                <header className="fixed z-30 flex h-[60px] w-full items-center justify-around bg-main shadow-header">
+                <header className="hidden md:flex fixed z-30 h-[60px] w-full items-center justify-around bg-main shadow-header">
                     <nav className="flex h-full w-full items-center justify-between px-5">
                         <div className="min-w-[100px]">
                             <Link href="/">
@@ -83,9 +84,9 @@ export default function RootLayout({
                         </div>
                     </nav>
                 </header>
-                <main className="mt-[60px] flex w-full self-center">
-                    <aside className="relative w-[72px] lg:min-w-[240px]">
-                        <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[72px] lg:w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain lg:pt-5 pr-0 pb-6 pl-2 text-sm border-r border-white border-opacity-10 lg:border-none">
+                <main className="mt-0 md:mt-[60px] flex w-full self-center">
+                    <aside className="relative md:w-[72px] lg:min-w-[240px]">
+                        <div className="bg-black md:bg-main flex md:block custom-scrollbar fixed md:top-[60px] bottom-0 z-20 h-14 md:h-auto w-full md:w-[72px] lg:w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain lg:pt-5 px-4 md:pr-0 md:pb-6 md:pl-2 text-sm border-r border-white border-opacity-10 lg:border-none">
                             <SidebarNavs />
                             <div className="hidden lg:block relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
                                 <p className="hidden lg:block leading-[22px] text-midColor">
@@ -107,7 +108,7 @@ export default function RootLayout({
                         </div>
                     </aside>
                     <div
-                        className={`w-full min-w-[420px] flex flex-col items-center`}
+                        className={`w-full md:min-w-[420px] flex flex-col items-center`}
                     >
                         {children}
                     </div>

@@ -29,9 +29,11 @@ const typeColorConfig: TypeColorConfigTypes = {
 const SingleCard = ({ pokemon }: { pokemon: Pokemon }) => {
     return (
         <div
-            className={`relative flex max-w-[692px] flex-col items-start gap-3 py-5 px-0 after:absolute after:left-0 after:bottom-0 after:h-px after:w-full after:scale-y-50 after:bg-grayTransparent after:content-[""]`}
+            className={`h-[90vh] md:h-auto relative flex max-w-[692px] flex-col items-start gap-3 py-5 px-4 md:px-0 md:after:absolute md:after:left-0 md:after:bottom-0 md:after:h-px md:after:w-full md:after:scale-y-50 md:after:bg-grayTransparent md:after:content-[""]`}
         >
-            <div className={`flex items-start justify-center gap-3`}>
+            <div
+                className={`flex items-center md:items-start justify-center gap-3`}
+            >
                 <Image
                     src="/images/masterball.png"
                     alt="masterball logo"
@@ -53,7 +55,7 @@ const SingleCard = ({ pokemon }: { pokemon: Pokemon }) => {
                 </div>
             </div>
             <Link
-                className={`mr-5 flex h-[600px] max-h-[600px] min-h-[600px] w-[336px] min-w-[336px] max-w-[336px] flex-col items-center justify-center gap-6 rounded-lg bg-darkColor p-6`}
+                className={`md:mr-5 flex h-full md:h-[600px] md:max-h-[600px] md:min-h-[600px] w-full md:w-[336px] md:min-w-[336px] md:max-w-[336px] flex-col items-center justify-center gap-6 rounded-lg bg-darkColor p-6`}
                 href={`/${pokemon.eng_name}`}
             >
                 <Image

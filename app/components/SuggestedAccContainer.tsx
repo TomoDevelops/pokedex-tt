@@ -21,7 +21,7 @@ function SuggestedAccContainer() {
     };
     return (
         <div
-            className={`py-2 px-0 text-white text-opacity-90 font-semibold text-sm relative before:content-[''] before:absolute before:top-0 before:left-2 before:right-2 before:h-px before:bg-grayTransparent`}
+            className={`hidden md:block py-2 px-0 text-white text-opacity-90 font-semibold text-sm relative before:content-[''] before:absolute before:top-0 before:left-2 before:right-2 before:h-px before:bg-grayTransparent`}
         >
             <p className={`hidden lg:block py-0 px-2 mb-2 text-sm`}>
                 Top Attack
