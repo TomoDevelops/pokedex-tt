@@ -84,15 +84,15 @@ export default function RootLayout({
                     </nav>
                 </header>
                 <main className="mt-[60px] flex w-full self-center">
-                    <aside className="relative min-w-[240px]">
-                        <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain pt-5 pr-0 pb-6 pl-2 text-sm">
+                    <aside className="relative w-[72px] lg:min-w-[240px]">
+                        <div className="custom-scrollbar fixed top-[60px] bottom-0 z-20 w-[72px] lg:w-[240px] overflow-y-auto overflow-x-hidden overscroll-y-contain lg:pt-5 pr-0 pb-6 pl-2 text-sm border-r border-white border-opacity-10 lg:border-none">
                             <SidebarNavs />
-                            <div className="relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
-                                <p className="leading-[22px] text-midColor">
+                            <div className="hidden lg:block relative py-6 px-2 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent after:content-['']">
+                                <p className="hidden lg:block leading-[22px] text-midColor">
                                     Log in to follow creators, like videos, and
                                     view comments.
                                 </p>
-                                <div className="mt-5 w-full">
+                                <div className="hidden lg:block mt-5 w-full">
                                     <Button
                                         className="text-lg"
                                         bgColor={"outline"}

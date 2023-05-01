@@ -11,9 +11,9 @@ import { HiOutlineUsers } from "react-icons/hi";
 export default function SidebarNavs() {
     const pathname = usePathname();
     return (
-        <div>
+        <div className="py-2">
             <Link
-                className={`flex items-center justify-start gap-2 p-2 font-bold ${
+                className={`flex items-center justify-center lg:justify-start gap-2 p-2 font-bold ${
                     pathname === "/"
                         ? "text-accentColor"
                         : "text-lightestColor text-opacity-90"
@@ -21,17 +21,17 @@ export default function SidebarNavs() {
                 href="/"
             >
                 <BiHome
-                    size="32"
+                    size="24"
                     color={`${
                         pathname === "/"
                             ? "rgb(var(--accentColor))"
                             : "rgb(var(--lightestColor))"
                     }`}
                 />
-                Pokédex
+                <p className="hidden lg:block">Pokédex</p>
             </Link>
             <Link
-                className={`flex items-center justify-start gap-2 p-2 font-bold ${
+                className={`flex items-center justify-center lg:justify-start gap-2 p-2 font-bold ${
                     pathname === "/following"
                         ? "text-accentColor"
                         : "text-lightestColor text-opacity-90"
@@ -39,17 +39,17 @@ export default function SidebarNavs() {
                 href="/following"
             >
                 <HiOutlineUsers
-                    size="32"
+                    size="24"
                     color={`${
                         pathname === "/following"
                             ? "rgb(var(--accentColor))"
                             : "rgb(var(--lightestColor))"
                     }`}
                 />
-                Following
+                <p className="hidden lg:block">Following</p>
             </Link>
             <Link
-                className={`flex items-center justify-start gap-2 p-2 font-bold ${
+                className={`flex items-center justify-center lg:justify-start gap-2 p-2 font-bold ${
                     pathname === "/live"
                         ? "text-accentColor"
                         : "text-lightestColor text-opacity-90"
@@ -57,14 +57,14 @@ export default function SidebarNavs() {
                 href="/live"
             >
                 <BsCameraVideo
-                    size="32"
+                    size="24"
                     color={`${
                         pathname === "/live"
                             ? "rgb(var(--accentColor))"
                             : "rgb(var(--lightestColor))"
                     }`}
                 />
-                LIVE
+                <p className="hidden lg:block">LIVE</p>
             </Link>
         </div>
     );

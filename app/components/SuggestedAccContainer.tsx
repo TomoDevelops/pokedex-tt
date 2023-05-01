@@ -21,9 +21,11 @@ function SuggestedAccContainer() {
     };
     return (
         <div
-            className={`py-4 px-0 text-white text-opacity-90 font-semibold text-sm relative after:content-[''] after:absolute after:bottom-0 after:left-2 after:right-2 after:h-px after:bg-grayTransparent`}
+            className={`py-2 px-0 text-white text-opacity-90 font-semibold text-sm relative before:content-[''] before:absolute before:top-0 before:left-2 before:right-2 before:h-px before:bg-grayTransparent`}
         >
-            <p className={`py-0 px-2 mb-2 text-sm`}>Top Attack</p>
+            <p className={`hidden lg:block py-0 px-2 mb-2 text-sm`}>
+                Top Attack
+            </p>
             {pokemonSortedByAtk.slice(0, numToShow).map((pokemon) => (
                 <SuggestedAccCard
                     key={pokemon.id}
@@ -34,14 +36,14 @@ function SuggestedAccContainer() {
             ))}
             {numToShow < 25 ? (
                 <button
-                    className={`bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
+                    className={`hidden lg:block bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
                     onClick={handleShowMore}
                 >
                     Show More
                 </button>
             ) : (
                 <button
-                    className={`bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
+                    className={`hidden lg:block bg-transparent outline-none border-none text-mainRed cursor-pointer py-0 px-2 mt-2`}
                     onClick={handleShowLess}
                 >
                     Show Less

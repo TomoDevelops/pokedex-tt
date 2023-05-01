@@ -22,6 +22,9 @@ export async function generateMetadata({
     return {
         title: pokemon.name,
         description: `${pokemon.name}　の　詳細ページ`,
+        icons: {
+            icon: pokemon.image.front_default,
+        },
     };
 }
 
