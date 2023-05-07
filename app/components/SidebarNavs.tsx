@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { BiHome } from "react-icons/bi";
-import { BsCameraVideo } from "react-icons/bs";
+import { BsCameraVideo, BsSearch } from "react-icons/bs";
 import { HiOutlineUsers } from "react-icons/hi";
 
 export default function SidebarNavs() {
@@ -65,6 +65,24 @@ export default function SidebarNavs() {
                     }`}
                 />
                 <p className="hidden lg:block">LIVE</p>
+            </Link>
+            <Link
+                className={`md:hidden flex items-center justify-center lg:justify-start gap-2 p-2 font-bold ${
+                    pathname === "/search"
+                        ? "text-accentColor"
+                        : "text-lightestColor text-opacity-90"
+                }`}
+                href="/search"
+            >
+                <BsSearch
+                    size="24"
+                    color={`${
+                        pathname === "/search"
+                            ? "rgb(var(--accentColor))"
+                            : "rgb(var(--lightestColor))"
+                    }`}
+                />
+                <p className="hidden lg:block">Search</p>
             </Link>
         </div>
     );
