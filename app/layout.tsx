@@ -34,7 +34,7 @@ export default function RootLayout({
         // TODO: Add responsive layout for mobile and current one for tablet will be md:
         <html lang="en">
             <body
-                className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-full md:min-h-screen flex-col justify-start bg-main font-montserrat text-base`}
+                className={`${montserrat.variable} ${source.variable} custom-scrollbar flex min-h-full flex-col justify-start bg-main font-montserrat text-base`}
             >
                 <header className="hidden md:flex fixed z-30 h-[60px] w-full items-center justify-around bg-main shadow-header">
                     <nav className="flex h-full w-full items-center justify-between px-5">

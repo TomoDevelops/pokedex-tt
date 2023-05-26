@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import ALL_POKEMON from "@/public/data/data.json";
 import SuggestedAccCard from "@/app/components/SuggestedAccCard";
 
-const pokemonSortedByAtk = ALL_POKEMON.sort(
+const pokemonSortedByAtk = [...ALL_POKEMON].sort(
     (a, b) => b.stats["こうげき"] - a.stats["こうげき"]
 );
 
