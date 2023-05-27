@@ -2,6 +2,7 @@ type Pokemon = {
     id: string;
     name: string;
     eng_name: string;
+    url_name: string;
     description: string;
     image: {
         front_default: string;

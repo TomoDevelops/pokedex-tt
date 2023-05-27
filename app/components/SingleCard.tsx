@@ -56,7 +56,7 @@ const SingleCard = ({ pokemon }: { pokemon: Pokemon }) => {
             </div>
             <Link
                 className={`md:mr-5 flex h-full md:h-[600px] md:max-h-[600px] md:min-h-[600px] w-full md:w-[336px] md:min-w-[336px] md:max-w-[336px] flex-col items-center justify-center gap-6 rounded-lg md:bg-darkColor p-6`}
-                href={`/${pokemon.eng_name}`}
+                href={`/${pokemon.url_name}`}
             >
                 <Image
                     src={pokemon.image.front_default}

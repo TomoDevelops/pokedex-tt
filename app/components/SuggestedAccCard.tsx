@@ -5,6 +5,7 @@ import Image from "next/image";
 type SuggestedAccCardPropTypes = {
     name: string;
     eng_name: string;
+    url_name: string;
     image: {
         front_default: string;
         front_shiny?: string | null;
@@ -14,11 +15,12 @@ type SuggestedAccCardPropTypes = {
 function SuggestedAccCard({
     name,
     eng_name,
+    url_name,
     image,
 }: SuggestedAccCardPropTypes) {
     return (
         <Link
-            href={`/${eng_name}`}
+            href={`/${url_name}`}
             className={`flex items-center justify-center lg:justify-start gap-2 p-2`}
         >
             <Image

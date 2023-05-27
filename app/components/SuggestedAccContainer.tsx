@@ -31,6 +31,7 @@ function SuggestedAccContainer() {
                     key={pokemon.id}
                     name={pokemon.name}
                     eng_name={pokemon.eng_name}
+                    url_name={pokemon.url_name}
                     image={pokemon.image}
                 />
             ))}

@@ -1,8 +1,8 @@
 import ALL_POKEMON from "@/public/data/data.json";
 
-export default async function getPokemonData(eng_name: string) {
+export default async function getPokemonData(url_name: string) {
     const pokemonIndex = ALL_POKEMON.findIndex(
-        (pokemon) => pokemon["eng_name"] === eng_name
+        (pokemon) => pokemon["url_name"] === url_name
     );
     return ALL_POKEMON[pokemonIndex];
 }

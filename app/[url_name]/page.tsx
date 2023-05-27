@@ -9,14 +9,14 @@ import VideoContainer from "../components/VideoContainer";
 
 type ParamTypes = {
     params: {
-        eng_name: string;
+        url_name: string;
     };
 };
 
 export async function generateMetadata({
-    params: { eng_name },
+    params: { url_name },
 }: ParamTypes): Promise<Metadata> {
-    const pokemonData: Promise<Pokemon> = getPokemonData(eng_name);
+    const pokemonData: Promise<Pokemon> = getPokemonData(url_name);
     const pokemon: Pokemon = await pokemonData;
 
     return {
@@ -28,11 +28,12 @@ export async function generateMetadata({
     };
 }
 
-export default async function DetailPage({ params: { eng_name } }: ParamTypes) {
-    const pokemonData: Promise<Pokemon> = getPokemonData(eng_name);
-    const pokemonVideosData: Promise<PokemonVideo> = getPokemonVideos(eng_name);
-
+export default async function DetailPage({ params: { url_name } }: ParamTypes) {
+    const pokemonData: Promise<Pokemon> = getPokemonData(url_name);
     const pokemon = await pokemonData;
+    const pokemonVideosData: Promise<PokemonVideo> = getPokemonVideos(
+        pokemon.eng_name
+    );
 
     return (
         <div
