@@ -2,11 +2,12 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Montserrat, Source_Sans_Pro } from "next/font/google";
-import { BsSearch, BsPlus } from "react-icons/bs";
+import { BsPlus } from "react-icons/bs";
 
 import Button from "@/app/components/Button";
 import SidebarNavs from "@/app/components/SidebarNavs";
 import SuggestedAccContainer from "./components/SuggestedAccContainer";
+import { SearchInput } from "./components/SearchInput";
 
 export const metadata = {
     title: "Pokédex",
@@ -49,25 +50,7 @@ export default function RootLayout({
                             </Link>
                         </div>
                         <div className="min-w-[200px] py-2">
-                            <form className="flex items-center overflow-hidden rounded-[92px] bg-grayTransparent px-4 py-2">
-                                <input
-                                    className="w-[252px] border-none bg-transparent text-sm leading-[22px] caret-accentColor outline-none"
-                                    type="search"
-                                    name="search"
-                                    id="search"
-                                    placeholder="Search accounts and videos"
-                                />
-                                <span className="-mx-1 h-[28px] w-px bg-grayTransparent"></span>
-                                <button
-                                    className="-my-3 -mr-4 ml-0 cursor-pointer border-none bg-transparent py-4 pr-4 pl-3 outline-none hover:bg-neutral-700"
-                                    type="submit"
-                                >
-                                    <BsSearch
-                                        size="20"
-                                        color="rgba(255, 255, 255, 0.34)"
-                                    />
-                                </button>
-                            </form>
+                            <SearchInput />
                         </div>
                         <div className="flex justify-around gap-4">
                             <Button
