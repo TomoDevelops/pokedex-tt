@@ -12,5 +12,8 @@ export default async function getPokemonVideos(eng_name: string) {
     const res = await fetch(
         `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${query}&part=snippet&maxResults=${maxResults}`
     );
+    if (!res.ok) {
+        throw new Error(`Failed to fetch videos`);
+    }
     return res.json();
 }

@@ -31,7 +31,7 @@ export async function generateMetadata({
 export default async function DetailPage({ params: { url_name } }: ParamTypes) {
     const pokemonData: Promise<Pokemon> = getPokemonData(url_name);
     const pokemon = await pokemonData;
-    const pokemonVideosData: Promise<PokemonVideo> = getPokemonVideos(
+    const pokemonVideosData: PokemonVideo = await getPokemonVideos(
         pokemon.eng_name
     );
 
@@ -78,7 +78,7 @@ export default async function DetailPage({ params: { url_name } }: ParamTypes) {
             <div className={`w-full`}>
                 <Suspense fallback={<h2>Loading ....</h2>}>
                     {/* @ts-expect-error server component*/}
-                    <VideoContainer promise={pokemonVideosData} />
+                    <VideoContainer videos={pokemonVideosData} />
                 </Suspense>
             </div>
         </div>

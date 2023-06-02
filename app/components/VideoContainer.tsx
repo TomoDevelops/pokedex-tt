@@ -1,26 +1,23 @@
 import VideoCard from "./VideoCard";
 
 type Props = {
-    promise: Promise<PokemonVideo>;
+    videos: PokemonVideo;
 };
 
-async function VideoContainer({ promise }: Props) {
+async function VideoContainer({ videos }: Props) {
     try {
-        const videos = await promise;
-
         if (!videos || !videos.items) {
+            // This should be some loading UI
             return (
                 <div>
-                    <h1 className="text-4xl">
-                        Could not load videos at this time
-                    </h1>
+                    <h1 className="text-4xl">Loading</h1>
                 </div>
             );
         }
 
         return (
             <div
-                className={`grid grid-cols-[repeat(auto-fill,minmax(184px,_1fr))] gap-y-6 gap-x-4 min-w-[520px]`}
+                className={`grid grid-cols-[repeat(auto-fill,minmax(184px,1fr))] gap-y-6 gap-x-4 min-w-[520px]`}
             >
                 {videos.items.map((video) => (
                     <VideoCard video={video} key={video.id.videoId} />
