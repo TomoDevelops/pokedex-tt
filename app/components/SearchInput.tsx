@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
 import getPokemonsData from "@/lib/getPokemonsData";
-import { stringify } from "querystring";
 
 export const SearchInput = () => {
     const router = useRouter();
-    const searchParams = useSearchParams()!;
+
     const [query, setQuery] = useState<string>("");
     const [inputFocus, setInputFocus] = useState<boolean>(false);
     const [retrievedPokemon, setRetrievedPokemon] = useState<Array<Pokemon>>(
@@ -24,19 +23,10 @@ export const SearchInput = () => {
         setRetrievedPokemon(pokemonsData);
     };
 
-    const createQueryString = useCallback(
-        (name: string, value: string) => {
-            const params = new URLSearchParams(searchParams);
-            params.set(name, value);
-            return params.toString();
-        },
-        [searchParams]
-    );
-
     const onSearch = (event: React.FormEvent) => {
         event.preventDefault();
         const encodedQuery = encodeURI(query);
-        router.push(`/search?${createQueryString("q", query)}`);
+        router.push(`/search?q=${encodedQuery}`);
         setInputFocus(false);
     };
 

@@ -5,8 +5,9 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Search = () => {
-    const searchParam = useSearchParams();
-    const [searchQuery, setSearchQuery] = useState(searchParam.get("q") || "");
+    const [searchQuery, setSearchQuery] = useState(
+        useSearchParams().get("q") || ""
+    );
     const encodedSearchQuery = encodeURI(searchQuery || "");
     console.log(encodedSearchQuery);
     const [searchResult, setSearchResult] = useState<Array<Pokemon>>([]);
@@ -22,6 +23,7 @@ const Search = () => {
 
     return (
         <div>
+            <div>Search: {useSearchParams().get("q")}</div>
             <div>Search: {searchQuery}</div>
             {searchResult.length > 0 && (
                 <ul>
