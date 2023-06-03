@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
@@ -10,8 +10,8 @@ import getPokemonsData from "@/lib/getPokemonsData";
 
 export const SearchInput = () => {
     const router = useRouter();
-
-    const [query, setQuery] = useState<string>("");
+    const searchQuery = useSearchParams()?.get("q");
+    const [query, setQuery] = useState<string>(searchQuery || "");
     const [inputFocus, setInputFocus] = useState<boolean>(false);
     const [retrievedPokemon, setRetrievedPokemon] = useState<Array<Pokemon>>(
         []
