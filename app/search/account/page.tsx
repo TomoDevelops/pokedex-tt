@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const Search = () => {
+const SearchUser = () => {
     const searchQuery = useSearchParams().get("q") || "";
     const [searchResult, setSearchResult] = useState<Array<Pokemon>>([]);
 
@@ -18,23 +18,13 @@ const Search = () => {
     useEffect(() => {
         fetchData();
     }, [searchQuery]);
-
     return (
         <div className={`min-w-[420px] mx-auto`}>
             <div className={`w-[800px] pt-4 pr-6 pb-16 pl-4`}>
                 {searchResult.length > 0 && (
                     <>
-                        <div className="flex justify-between">
-                            <h2 className="pb-2 font-bold">ポケモン</h2>
-                            <Link
-                                href={`/search/account?q=${searchQuery}`}
-                                className="text-sm"
-                            >
-                                もっと見る
-                            </Link>
-                        </div>
                         <ul className="flex flex-col gap-6">
-                            {searchResult.splice(0, 3).map((pokemon) => (
+                            {searchResult.map((pokemon) => (
                                 <Link
                                     className={`flex`}
                                     href={`/${pokemon.url_name}`}
@@ -94,5 +84,4 @@ const Search = () => {
         </div>
     );
 };
-
-export default Search;
+export default SearchUser;

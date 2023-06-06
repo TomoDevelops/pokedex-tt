@@ -1,10 +1,9 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import Button from "../components/Button";
-import { Suspense } from "react";
 
 import getPokemonData from "@/lib/getPokemonData";
-import getPokemonVideos from "@/lib/getPokemonVideos";
+
 import VideoContainer from "../components/VideoContainer";
 
 type ParamTypes = {
@@ -31,9 +30,6 @@ export async function generateMetadata({
 export default async function DetailPage({ params: { url_name } }: ParamTypes) {
     const pokemonData: Promise<Pokemon> = getPokemonData(url_name);
     const pokemon = await pokemonData;
-    const pokemonVideosData: PokemonVideo = await getPokemonVideos(
-        pokemon.eng_name
-    );
 
     return (
         <div
@@ -76,10 +72,7 @@ export default async function DetailPage({ params: { url_name } }: ParamTypes) {
                 </p>
             </div>
             <div className={`w-full`}>
-                <Suspense fallback={<h2>Loading ....</h2>}>
-                    {/* @ts-expect-error server component*/}
-                    <VideoContainer videos={pokemonVideosData} />
-                </Suspense>
+                <VideoContainer pokemonName={pokemon.eng_name} />
             </div>
         </div>
     );
