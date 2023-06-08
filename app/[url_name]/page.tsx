@@ -33,7 +33,7 @@ export default async function DetailPage({ params: { url_name } }: ParamTypes) {
 
     return (
         <div
-            className={`flex min-h-screen max-w-[1776px] flex-auto flex-col gap-5 overflow-x-hidden py-9 px-6`}
+            className={`flex min-h-screen max-w-[1776px] w-full flex-auto flex-col gap-5 overflow-x-hidden py-9 px-6`}
         >
             <div className={`flex max-w-[624px] flex-col`}>
                 <div className={`flex items-start justify-start gap-5`}>

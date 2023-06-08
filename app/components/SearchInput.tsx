@@ -37,6 +37,7 @@ export const SearchInput = () => {
                 onSubmit={onSearch}
             >
                 <input
+                    autoComplete="off"
                     className="w-96 px-1 border-none bg-transparent text-sm leading-[22px] caret-accentColor outline-none"
                     type="text"
                     name="query"

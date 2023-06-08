@@ -31,16 +31,16 @@ export default function VideoContainer({ pokemonName }: Props) {
             }
         };
         fetchData();
-    }, []);
+    }, [pokemonName]);
 
     if (loading) {
         return (
             <div
-                className={`grid grid-cols-[repeat(auto-fill,minmax(184px,1fr))] gap-y-6 gap-x-4 min-w-[520px]`}
+                className={`grid grid-cols-[repeat(auto-fill,minmax(184px,1fr))] gap-y-6 gap-x-4`}
             >
                 {Array.from({ length: 20 }, (_, i) => i + 1).map((id) => (
                     <Skeleton
-                        className="bg-grayTransparent w-52 h-72"
+                        className="bg-grayTransparent w-48 h-64"
                         key={id}
                     />
                 ))}
