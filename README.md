@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokédex Application
 
-## Getting Started
+## 📸Image
 
-First, run the development server:
+### Home
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![Screenshot of application home](/public/images/Screenshot-home.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pokémon Detail Page
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Screenshot of application detail page](/public/images/Screenshot-detail_page.png)
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+### Search Result Page
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Screenshot of application search page](/public/images/Screenshot-search.png)
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+-   "Infinite" scrolling on the home page (First pokemon to Last. **Will not** loop back to first pokemon)
+-   Search suggestions based on input
+-   API call to YouTube API to retrieve relevant video about pokemon
+-   Search Pokémon and relevant videos (e.g: Bulbasaur) => shows Bulbasaur card and relevant videos
+-   Search the YouTube API for multiple words (e.g: how to beat groudon in ruby) => shows videos related to the search term
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   [React (Next.js)](https://nextjs.org/ "Next.js")
+-   [TypeScript](https://www.typescriptlang.org/ "TypeScript")
+-   [Tailwind CSS](https://tailwindcss.com/ "Tailwind CSS")
+-   [PokéAPI](https://pokeapi.co/ "PokéAPI")
+-   [YouTubeAPI](https://developers.google.com/youtube/v3 "YouTubeAPI")
 
-## Deploy on Vercel
+## Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   [Deployed Application](https://pokedex-tt.vercel.app/ "Pokédex Application")
+-   [My Twitter](https://twitter.com/TomoDevelops "My Twitter")
+-   [My Website](https://en.totablue.com "My Website")
+-   [My Website (日本語)](https://totablue.com "My JP Website")
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## TODOs
+
+-   Responsive layout
+-   Add English toggle
