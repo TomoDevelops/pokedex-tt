@@ -9,9 +9,7 @@ import VideoContainer from "../components/VideoContainer";
 
 const Search = () => {
     const searchQuery = useSearchParams().get("q") || "";
-    const [userSearchQuery, setUserSearchQuery] = useState(searchQuery);
     const [searchResult, setSearchResult] = useState<Array<Pokemon>>([]);
-
     const fetchData = async () => {
         const pokemonsData = await getPokemonsData(searchQuery);
         setSearchResult(pokemonsData);
@@ -19,7 +17,6 @@ const Search = () => {
 
     useEffect(() => {
         fetchData();
-        setUserSearchQuery(searchQuery);
     }, [searchQuery]);
 
     return (

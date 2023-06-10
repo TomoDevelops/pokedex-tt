@@ -11,7 +11,25 @@ export default function ForYou() {
         number | undefined
     >();
     const [numberOfCardsLoaded, setNumberOfCardsLoaded] = useState<number>(20);
-    const loadedPokemon = ALL_POKEMON.slice(0, numberOfCardsLoaded);
+    // const loadedPokemon = ALL_POKEMON.slice(0, numberOfCardsLoaded);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [loadedPokemon, setLoadedPokemon] = useState([]);
+
+    useEffect(() => {
+        setLoading((l) => !l);
+        const fetchData = async () => {
+            const res = await fetch(
+                `http://localhost:3000/api/pokemon?dataNum=${numberOfCardsLoaded}`,
+                {
+                    method: "GET",
+                }
+            );
+            const data = await res.json();
+            setLoadedPokemon(data);
+            setLoading((l) => !l);
+        };
+        fetchData();
+    }, [numberOfCardsLoaded]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,12 +61,15 @@ export default function ForYou() {
             className=" h-auto w-full md:w-[592px] md:max-w-[592px] lg:max-w-none lg:w-[692px]"
             ref={containerRef}
         >
-            {loadedPokemon.map((pokemon, index) => (
-                <SingleCard
-                    pokemon={pokemon}
-                    key={`${pokemon.id}+${Math.random() * 20}`}
-                />
-            ))}
+            {loadedPokemon
+                ? loadedPokemon.map((pokemon, index) => (
+                      <SingleCard
+                          pokemon={pokemon}
+                          key={`${pokemon.id}+${Math.random() * 20}`}
+                      />
+                  ))
+                : null}
+            {loading ? <h1>Loading </h1> : null}
         </div>
     );
 }
